@@ -1,4 +1,4 @@
-import { Box, Button, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, ring, Stack, Text } from "@chakra-ui/react";
 import NextImage from "next/image";
 
 export function Hero() {
@@ -7,7 +7,7 @@ export function Hero() {
       <Stack
         position="absolute"
         top="261px"
-        right="272px"
+        right={{ base: "24px", md: "65px", lg: "65px", xl: "65px", '2xl': "275px" }}
         direction="row"
         width="213px"
         height="66px"
@@ -54,7 +54,7 @@ export function Hero() {
           h="48px"
           _hover={{ bgColor: "#0062EB" }}
         >
-          Sign In
+          Get Started
         </Button>
       </Stack>
 
