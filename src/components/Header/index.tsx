@@ -1,4 +1,5 @@
 import { Box, Stack } from "@chakra-ui/react";
+import { Hero } from "./Hero";
 import { Navbar } from "./Navbar";
 
 export function Header() {
@@ -15,6 +16,7 @@ export function Header() {
         borderRadius="10px"
       >
         <Navbar />
+        <Hero />
       </Stack>
     </Box>
   );
