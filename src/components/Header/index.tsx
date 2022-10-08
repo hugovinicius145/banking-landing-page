@@ -1,4 +1,5 @@
 import { Box, Stack } from "@chakra-ui/react";
+import { Brands } from "./Brand";
 import { Hero } from "./Hero";
 import { Navbar } from "./Navbar";
 
@@ -17,6 +18,7 @@ export function Header() {
       >
         <Navbar />
         <Hero />
+        <Brands />
       </Stack>
     </Box>
   );
