@@ -9,15 +9,22 @@ import { Footer } from '../components/Footer';
 
 const Home: NextPage = () => {
   return (
-    <Stack
-      spacing="45"
-    >
-      <Header />
-      <Features />
-      <ServicesSection />
-      <Testimonial />
-      <Footer />
-    </Stack>
+    <>
+      <Head>
+        <title>Banking Landing Page</title>
+      </Head>
+      <main>
+        <Stack
+          spacing="45"
+        >
+          <Header />
+          <Features />
+          <ServicesSection />
+          <Testimonial />
+          <Footer />
+        </Stack>
+      </main>
+    </>
   )
 }
 
