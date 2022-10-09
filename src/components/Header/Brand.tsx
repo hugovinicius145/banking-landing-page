@@ -1,13 +1,18 @@
-import { Box, Stack } from "@chakra-ui/react";
+import { Box, Stack, useBreakpointValue } from "@chakra-ui/react";
 import NextImage from "next/image";
 
 export function Brands() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <Stack
-      direction="row"
+      direction={isWideVersion ? "row" : "column"}
       align="center"
       justify="center"
-      spacing="20"
+      spacing={isWideVersion ? "20" : "8"}
     >
       <Box>
         <NextImage

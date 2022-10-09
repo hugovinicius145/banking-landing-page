@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Stack } from '@chakra-ui/react';
+import { Stack, useBreakpointValue } from '@chakra-ui/react';
+
 import { Header } from '../components/Header';
 import { Features } from '../components/Features';
 import { ServicesSection } from '../components/ServicesSection';
@@ -8,6 +9,11 @@ import { Testimonial } from '../components/Testimonial';
 import { Footer } from '../components/Footer';
 
 const Home: NextPage = () => {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <>
       <Head>
@@ -15,12 +21,12 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Stack
-          spacing="45"
+          spacing={isWideVersion ? "45" : "20"}
         >
           <Header />
           <Features />
           <ServicesSection />
-          <Testimonial />
+          {isWideVersion && (<Testimonial />)}
           <Footer />
         </Stack>
       </main>

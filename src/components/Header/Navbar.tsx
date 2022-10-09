@@ -1,8 +1,13 @@
-import { Box, Button, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
 import NextImage from "next/image";
 import NextLink from "next/link";
 
 export function Navbar() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <Stack
       direction="row"
@@ -20,12 +25,14 @@ export function Navbar() {
         </Box>
       </NextLink>
 
-      <Stack direction="row" fontSize="16px" spacing="14" cursor="pointer">
-        <Text fontWeight="semibold">Home</Text>
-        <Text>Features</Text>
-        <Text>Showcase</Text>
-        <Text>Pricing</Text>
-      </Stack>
+      {isWideVersion && (
+        <Stack direction="row" fontSize="16px" spacing="14" cursor="pointer">
+          <Text fontWeight="semibold">Home</Text>
+          <Text>Features</Text>
+          <Text>Showcase</Text>
+          <Text>Pricing</Text>
+        </Stack>
+      )}
 
       <Button
         bgColor="#F5F6FB"

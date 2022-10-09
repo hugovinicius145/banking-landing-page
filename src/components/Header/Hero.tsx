@@ -13,7 +13,7 @@ export function Hero() {
     return (
       <Stack
         position="absolute"
-        top="261px"
+        top={isWideVersion ? "261px" : "741px"}
         right={{ base: "24px", md: "65px", lg: "65px", xl: "65px", '2xl': "275px" }}
         direction="row"
         width="213px"
@@ -40,10 +40,10 @@ export function Hero() {
 
   return (
     <Stack
-      direction={isWideVersion ? "row" : "column-reverse"}
+      direction={isWideVersion ? "row" : "column"}
       align="center"
       justify="space-between"
-      spacing="36"
+      spacing={isWideVersion ? "36" : "8"}
     >
       <Stack align="left" spacing="5">
         <Text fontWeight="bold" fontSize="55px" color="#000000">
@@ -56,7 +56,6 @@ export function Hero() {
       </Stack>
 
       <Box >
-
         <NextImage
           src="/hero.png"
           width="542px"
