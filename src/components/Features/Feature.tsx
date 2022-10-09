@@ -13,6 +13,7 @@ export function Feature({ imageSrc, title, subtitle }: FeatureProps) {
       direction="row"
       maxWidth="350px"
       spacing="6"
+      mx="auto"
     >
       <Box>
         <NextImage

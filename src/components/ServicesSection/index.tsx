@@ -8,7 +8,7 @@ export function ServicesSection() {
       px="95px"
       py="60px"
     >
-      <Stack spacing="180px" px="95">
+      <Stack spacing="180px" px="95" align="center" justify="center">
         <Service
           imageSrc="/services/service-1.png"
           title="Boost  Productivit"

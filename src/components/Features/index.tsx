@@ -10,7 +10,7 @@ export function Features() {
       px="95px"
       py="60px"
     >
-      <Stack spacing="20">
+      <Stack spacing="20" align="center" justify="center">
         <Stack spacing="5" align="center" justify="center">
           <Text fontWeight="bold" fontSize="36px" color="black">
             For Your Business
@@ -20,7 +20,7 @@ export function Features() {
           </Text>
         </Stack>
 
-        <SimpleGrid columns={3} columnGap="22" spacing="60px">
+        <SimpleGrid columns={3} columnGap="22" spacing="60px" w="full">
           <Feature
             imageSrc="/features/briefcase.svg"
             title="Share your Insights"
