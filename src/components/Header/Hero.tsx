@@ -1,7 +1,14 @@
-import { Box, Button, ring, Stack, Text } from "@chakra-ui/react";
+import { Box, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
 import NextImage from "next/image";
 
+import { GetStartedButton } from "../Buttons/GetStartedButton";
+
 export function Hero() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   function BulkComponent() {
     return (
       <Stack
@@ -33,7 +40,7 @@ export function Hero() {
 
   return (
     <Stack
-      direction="row"
+      direction={isWideVersion ? "row" : "column-reverse"}
       align="center"
       justify="space-between"
       spacing="36"
@@ -45,17 +52,7 @@ export function Hero() {
         <Text fontSize="16px">
           Aiciatis unde omnis iste natus error sit <br /> voluptatem accusantium doloremque laudan.
         </Text>
-        <Button
-          bgColor="#1F7CFF"
-          color="#FFFFFF"
-          fontSize="16px"
-          fontWeight="normal"
-          w="180px"
-          h="48px"
-          _hover={{ bgColor: "#0062EB" }}
-        >
-          Get Started
-        </Button>
+        <GetStartedButton />
       </Stack>
 
       <Box >
