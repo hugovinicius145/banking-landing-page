@@ -39,7 +39,7 @@ export function CallToAction() {
               px="36px"
               fontWeight="bold"
             >
-              Let's Talk
+              Let&apos;s Talk
             </Button>
             <Button
               bgColor="#1F7CFF"
