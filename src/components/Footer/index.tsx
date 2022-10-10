@@ -1,5 +1,6 @@
-import { Box, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Box, SimpleGrid, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
 import NextImage from "next/image";
+
 import { CallToAction } from "../CallToAction";
 
 interface ItemProps {
@@ -8,6 +9,10 @@ interface ItemProps {
 }
 
 export function Footer() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
 
   function Item({ imageSrc, text }: ItemProps) {
     return (
@@ -33,7 +38,7 @@ export function Footer() {
   return (
     <Box
       width="full"
-      px="149px"
+      px={isWideVersion ? "149px" : "8"}
       py="60px"
       bgColor="#191046"
       color="#C6C6C6"
@@ -41,10 +46,11 @@ export function Footer() {
     >
       <Stack spacing="33px" mt="176px" align="center" justify="center">
         <SimpleGrid
-          columns={4}
+          columns={isWideVersion ? 4 : 1}
           maxWidth="1158px"
           columnGap={8}
-          justifyItems="center"
+          justifyItems={isWideVersion ? "center" : "start"}
+          spacing={isWideVersion ? "" : "8"}
         >
           {/* Company Info */}
           <Stack spacing="25px">

@@ -34,7 +34,7 @@ export function Testimonial() {
       width="full"
       px={isWideVersion ? "95px" : "8"}
       pt={isWideVersion ? "60px" : "8"}
-      pb="260px"
+      pb={isWideVersion ? "260px" : "100px"}
     >
       <Box
         bgImage={isWideVersion ? "/Testimonial.png" : "none"}

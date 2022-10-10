@@ -1,18 +1,24 @@
-import { Box, Button, Flex, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
 
 export function CallToAction() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <Flex minWidth='max-content' alignItems='center' justify="center">
       <Flex
-        width="980px"
-        height="331px"
+        maxW={isWideVersion ? "980px" : "353px"}
+        maxHeight={isWideVersion ? "331px" : "331px"}
         position="absolute"
-        bottom="457px"
+        bottom={isWideVersion ? "457px" : "1010px"}
         bgColor="#1F7CFF"
         borderRadius="10px"
         align="center"
         justify="center"
         color="white"
+        p={isWideVersion ? "" : "4"}
       >
         <Stack
           textAlign="center"
@@ -21,11 +27,11 @@ export function CallToAction() {
           <Text
             maxWidth="568px"
             fontWeight="bold"
-            fontSize="36px"
+            fontSize={isWideVersion ? "36px" : "24px"}
           >
             Move even faster with Your guide in the digital age.
           </Text>
-          <Stack direction="row" justify="center" spacing="13px">
+          <Stack direction={isWideVersion ? "row" : "column"} justify="center" spacing="13px">
             <Button
               bgColor="white"
               color="#1F7CFF"
