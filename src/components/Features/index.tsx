@@ -1,16 +1,20 @@
-import { Box, GridItem, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Box, SimpleGrid, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
+
 import { Feature } from "./Feature";
 
 export function Features() {
-
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
 
   return (
     <Box
       width="full"
-      px="95px"
-      py="60px"
+      px={isWideVersion ? "95px" : "8"}
+      py={isWideVersion ? "60px" : "8"}
     >
-      <Stack spacing="20" align="center" justify="center">
+      <Stack spacing={isWideVersion ? "20" : "8"} align="center" justify="center" textAlign="center">
         <Stack spacing="5" align="center" justify="center">
           <Text fontWeight="bold" fontSize="36px" color="black">
             For Your Business
@@ -20,7 +24,13 @@ export function Features() {
           </Text>
         </Stack>
 
-        <SimpleGrid columns={3} columnGap="22" spacing="60px" w="full">
+        <SimpleGrid
+          columns={isWideVersion ? 3 : 1}
+          columnGap="22"
+          spacing={isWideVersion ? "60px" : "6"}
+          w="full"
+          textAlign="left"
+        >
           <Feature
             imageSrc="/features/briefcase.svg"
             title="Share your Insights"

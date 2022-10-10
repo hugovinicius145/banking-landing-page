@@ -21,7 +21,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Stack
-          spacing={isWideVersion ? "45" : "20"}
+          spacing={isWideVersion ? "45" : "8"}
         >
           <Header />
           <Features />
