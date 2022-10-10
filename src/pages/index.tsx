@@ -26,7 +26,7 @@ const Home: NextPage = () => {
           <Header />
           <Features />
           <ServicesSection />
-          {isWideVersion && (<Testimonial />)}
+          <Testimonial />
           <Footer />
         </Stack>
       </main>

@@ -1,10 +1,15 @@
-import { Box, Flex, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Box, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
 
 export function Testimonial() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   function Card() {
     return (
       <Box
-        width="424px"
+        maxW="424px"
         px="62px"
         py="80px"
         borderRadius="15px"
@@ -27,18 +32,23 @@ export function Testimonial() {
   return (
     <Box
       width="full"
-      px="95px"
-      pt="60px"
+      px={isWideVersion ? "95px" : "8"}
+      pt={isWideVersion ? "60px" : "8"}
       pb="260px"
     >
       <Box
-        bgImage="/Testimonial.png"
+        bgImage={isWideVersion ? "/Testimonial.png" : "none"}
         bgRepeat="no-repeat"
-        w="1189px"
-        h="583px"
+        maxW="1189px"
+        maxH="583px"
         mx="auto"
       >
-        <Stack spacing="75px" align="center" justify="center" textAlign="center">
+        <Stack
+          spacing={isWideVersion ? "75px" : "6"}
+          align="center"
+          justify="center"
+          textAlign="center"
+        >
           <Text
             maxWidth="377px"
             fontWeight="bold"
