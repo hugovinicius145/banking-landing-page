@@ -18,7 +18,7 @@ export function CallToAction() {
         align="center"
         justify="center"
         color="white"
-        p={isWideVersion ? "" : "4"}
+        p={isWideVersion ? "8" : "4"}
       >
         <Stack
           textAlign="center"
