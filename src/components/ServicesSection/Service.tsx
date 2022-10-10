@@ -1,4 +1,4 @@
-import { Box, Stack, Text } from "@chakra-ui/react";
+import { Box, Stack, Text, useBreakpointValue } from "@chakra-ui/react";
 import NextImage from "next/image";
 
 import { GetStartedButton } from "../Buttons/GetStartedButton";
@@ -11,10 +11,15 @@ interface ServiceProps {
 }
 
 export function Service({ imageSrc, title, description, reverse }: ServiceProps) {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <Stack
-      direction={reverse ? "row-reverse" : "row"}
-      spacing="88px"
+      direction={isWideVersion ? (reverse ? "row-reverse" : "row") : "column"}
+      spacing={isWideVersion ? "88px" : "6"}
     >
       <Box>
         <NextImage
@@ -23,7 +28,7 @@ export function Service({ imageSrc, title, description, reverse }: ServiceProps)
           height="450px"
         />
       </Box>
-      <Stack spacing="30px">
+      <Stack spacing={isWideVersion ? "30px" : "4"}>
         <Text
           fontWeight="bold"
           fontSize="36px"

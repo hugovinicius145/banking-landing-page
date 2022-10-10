@@ -1,14 +1,25 @@
-import { Box, Stack } from "@chakra-ui/react";
+import { Box, Stack, useBreakpointValue } from "@chakra-ui/react";
+
 import { Service } from "./Service";
 
 export function ServicesSection() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <Box
       width="full"
-      px="95px"
-      py="60px"
+      px={isWideVersion ? "95px" : "8"}
+      py={isWideVersion ? "60px" : "8"}
     >
-      <Stack spacing="180px" px="95" align="center" justify="center">
+      <Stack
+        spacing={isWideVersion ? "180px" : "16"}
+        px={isWideVersion ? "95" : "0"}
+        align="center"
+        justify="center"
+      >
         <Service
           imageSrc="/services/service-1.png"
           title="Boost  Productivit"
