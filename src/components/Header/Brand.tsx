@@ -1,4 +1,4 @@
-import { Box, Stack, useBreakpointValue } from "@chakra-ui/react";
+import { Box, SimpleGrid, useBreakpointValue } from "@chakra-ui/react";
 import NextImage from "next/image";
 
 export function Brands() {
@@ -8,10 +8,9 @@ export function Brands() {
   });
 
   return (
-    <Stack
-      direction={isWideVersion ? "row" : "column"}
-      align="center"
-      justify="center"
+    <SimpleGrid
+      columns={isWideVersion ? 5 : 2}
+      alignItems="center"
       spacing={isWideVersion ? "20" : "8"}
     >
       <Box>
@@ -53,6 +52,6 @@ export function Brands() {
           height="46px"
         />
       </Box>
-    </Stack>
+    </SimpleGrid>
   );
 }
